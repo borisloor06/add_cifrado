@@ -2,7 +2,7 @@ import { connectToDatabase } from "../lib/db";
 
 export default async function handler(request, response) {
     
-    const { text, encrypt } = request.body;
+    const { text, encrypt } = request.query;
     const { database } = await connectToDatabase();
     const collection = database.collection(process.env.NEXT_ATLAS_COLLECTION);
 
